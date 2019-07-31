@@ -31,6 +31,10 @@ io.on('connection', function(socket){
         user[1] = socket.id;
 
         sprUsr.push(user);
+
+        // HIER DIE VERSUCHE MIT DEN OBJEKTEN
+        // Die mag ich eigentlich lieber weil man die schöner ansprechen kann
+
         // nameObj.name = msg;
         // nameObj.id = socket.id;
 
