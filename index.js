@@ -17,26 +17,44 @@ http.listen(3000, function () {
     console.log('\\\\================================//');
 });
 
-io.on('connection', function(socket){
-    var user = [];
-    var sprUsr = [];
 
-    var nameObj = {};
-    let con = 0;
+var clients = [];
+
+io.sockets.on('connection', function(socket){
+    
+    clients.push(socket.id);
+
     socket.on('request_hello', function(msg) {
+
+        console.log(clients);
+        
+
+        // io.sockets.connected[clients[0]].emit("greeting", "Howdy, User 1!");
+        // io.sockets.connected[clients[1]].emit("greeting", "Hey there, User 2");
+        /*
 
         console.log(msg + ' send a request');
 
-        user[0] = msg;
-        user[1] = socket.id;
+        // user[0] = msg;
+        // user[1] = socket.id;
 
-        sprUsr.push(user);
-        // nameObj.name = msg;
-        // nameObj.id = socket.id;
+//         let stringMsg = '';
+//         stringMsg = socket.id;
+// console.log(stringMsg);
+
+        nameObj.name = msg;
+        nameObj.id = socket.id;
+        console.log(io.sockets.connected.id);
+
 
         // user.push(nameObj);
         
-        console.log(sprUsr);
-        con++;
+        if (nameObj.id) {
+            // console.log('back in loop');
+            // console.log(nameObj.id);
+            
+            io.sockets.connected.id.emit("greetigns", nameObj.id + " greets you.");
+        }
+        */
     });
 });

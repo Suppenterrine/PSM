@@ -153,7 +153,7 @@
         </h1>
         <h3 class="w3-center">
             <br>
-            <span class="header2" id="dataLength"></span>
+            <span class="header2" id="usrName"></span>
             <br>
             <br>
         </h3>
@@ -186,15 +186,17 @@
         return r;
     };
 
-
     let username = "usr-" + RandHex(8);
-    document.getElementById('dataLength').innerHTML = username;
+    document.getElementById('usrName').innerHTML = username;
     
     function sayHello(msg) {
         socket.emit('request_hello', msg);
     }
-    // id = greets
 
+    socket.on('greeting', function(msg){
+        document.getElementById('greets').innerHTML = msg;
+        console.log(msg);
+    });
 </script>
 
 </html>
