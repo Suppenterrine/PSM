@@ -18,5 +18,25 @@ http.listen(3000, function () {
 });
 
 io.on('connection', function(socket){
+    var user = [];
+    var sprUsr = [];
 
+    var nameObj = {};
+    let con = 0;
+    socket.on('request_hello', function(msg) {
+
+        console.log(msg + ' send a request');
+
+        user[0] = msg;
+        user[1] = socket.id;
+
+        sprUsr.push(user);
+        // nameObj.name = msg;
+        // nameObj.id = socket.id;
+
+        // user.push(nameObj);
+        
+        console.log(sprUsr);
+        con++;
+    });
 });

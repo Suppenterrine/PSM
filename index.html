@@ -23,7 +23,7 @@
 
         #control-bar {
             border-radius: 30px;
-            background-image: repeating-linear-gradient(45deg, #0acffe, #0acffe 5px, #24292E 5px, #24292E 10px);
+            background-image: repeating-linear-gradient(45deg, #FFCC00, #FFCC00 5px, #24292E 5px, #24292E 10px);
             padding: 10px 20px;
             margin-left: 10%;
             margin-right: 10%;
@@ -34,8 +34,8 @@
             font-weight: 400;
             letter-spacing: 4px;
             font-size: 30pt;
-            background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
-            color: white;
+            background-image: linear-gradient(to right, #FFCC00 0%, #D1A700 100%);
+            color: black;
             border-radius: 20px;
             padding: 2px;
             padding-left: 12px;
@@ -68,8 +68,8 @@
             margin-bottom: 4px;
             margin-right: 8px;
             margin-left: 8px;
-            color: #155398;
-            border: 2px solid linear-gradient(to right, #0acffe 0%, #495aff 100%);
+            color: black;
+            border: 2px solid linear-gradient(to right, #FFCC00 0%, #D1A700 100%);
             border-radius: 30px;
         }
 
@@ -85,8 +85,8 @@
         }
 
         .button1:hover {
-            color: white;
-            background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+            color: black;
+            background-image: linear-gradient(to right, #FFCC00 0%, #D1A700 100%);
         }
 
         .button2:hover {
@@ -149,12 +149,13 @@
 <body>
     <div id="header-section">
         <h1 class="w3-center">
-            <span class="header">Paletten Waage</span>
+            <span class="header">Testing Area</span>
         </h1>
         <h3 class="w3-center">
-            <span class="header2" id="dataLength">#Gewogene Pakete: 0</span> &#128230 <!--Unicode Paket-->
             <br>
-            <span style="color: white; font-family: Fira Mono, sans-serif; font-size: 60%;">(seit dem 17.07.19)</span>
+            <span class="header2" id="dataLength"></span>
+            <br>
+            <br>
         </h3>
         <h1 class="w3-center">
             <span class="header" id="greets">...</span>
@@ -163,7 +164,7 @@
 
     <div id="data-container">
         <div id="control-bar" class="w3-center">
-            <button class="button button1" onclick="requestData()">Say hello</button>
+            <button class="button button1" onclick="sayHello(username)">Say hello</button>
         </div>
     </div>
 </body>
@@ -186,6 +187,13 @@
     };
 
 
+    let username = "usr-" + RandHex(8);
+    document.getElementById('dataLength').innerHTML = username;
+    
+    function sayHello(msg) {
+        socket.emit('request_hello', msg);
+    }
+    // id = greets
 
 </script>
 
