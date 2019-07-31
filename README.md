@@ -6,7 +6,7 @@ zum laufen zu bringen.
 
 ---
 
-Zum starten in der Kommandozeile im selben Ordner einfach ```npm start``` eingeben.
+Zum starten des Servers, in der Kommandozeile im selben Ordner einfach ```npm start``` eingeben.
 ---
 
 Bei Änderungen an der ```index.js``` wird beim speichern der Node Server automatisch neugestartet.
