@@ -42,4 +42,4 @@ usr-ead88441 send a request
 pls help!
 Falls du irgendeine Idee hast oder gar die lösung, sag bitte mal bescheid ;)
 
-Kannst das ganze gerne comitten und ins repo pushen, aber bitte nicht in den master branch.
+Kannst das ganze gerne comitten und ins repo pushen, aber bitte in den testing-unit branch.
