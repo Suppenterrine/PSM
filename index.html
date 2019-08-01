@@ -189,14 +189,12 @@
     let username = "usr-" + RandHex(8);
     document.getElementById('usrName').innerHTML = username;
     
-    function sayHello(msg) {
-        socket.emit('request_hello', msg);
+    function sayHello(usr, id) {
+        socket.emit('request_hello', usr, socket.id);
     }
 
-    socket.on('greeting', function(msg){
+    socket.on('greetings', function (msg) {
         document.getElementById('greets').innerHTML = msg;
-        console.log(msg);
     });
 </script>
-
 </html>
