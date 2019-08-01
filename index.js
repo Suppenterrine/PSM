@@ -17,25 +17,12 @@ http.listen(3000, function () {
     console.log('\\\\================================//');
 });
 
-var clients = [];
-var nameObj = {};
-
 io.on('connection', function(socket){
 
-    socket.on('request_hello', function(msg) {
+    socket.on('request_hello', function(usr, id) {
 
-        console.log(msg + ' send a request');
+        console.log(usr + ' with id: ' + id + ' send a request');
         
-        nameObj.name = msg;
-        nameObj.id = socket.id;
-        clients.push(nameObj);
-        
-        console.log(clients);
-        console.log(clients[0].id);
-        
-        io.sockets.connected[clients[0].id].emit("greetings", "0 greets you.");
-        io.sockets.connected[clients[1].id].emit("greetings", "1 greets you.");
+        io.sockets.connected[id].emit("greetings", "Howdy, " + usr + "!");
     });
-
-
 });
