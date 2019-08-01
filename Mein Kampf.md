@@ -1,4 +1,4 @@
-Also mein Problem sieht folgendermaßen aus.
+## Also mein Problem sieht folgendermaßen aus.
 
 Wenn man sich von zwei Clients (Websiten) auf den Server hier verbindet kriegt jede Website eine
 eigene socket.id. Also jeder Client ist identifizierbar.
@@ -21,6 +21,7 @@ schreibe, weil ich die hoffnung hatte das es so funktioniert.
 
 Das kommt halt dabei raus:
 
+```
 usr-c78f7747 send a request
 [
   [ 'usr-c78f7747', 'JopDUVG2CN3h6DmoAAAB' ],
@@ -38,8 +39,9 @@ usr-ead88441 send a request
   [ 'usr-ead88441', 'ur2svSJlwSmUSCgyAAAA' ],
   [ 'usr-ead88441', 'ur2svSJlwSmUSCgyAAAA' ]
 ]
+```
 
 pls help!
 Falls du irgendeine Idee hast oder gar die lösung, sag bitte mal bescheid ;)
 
-Kannst das ganze gerne comitten und ins repo pushen, aber bitte in den testing-unit branch.
+Kannst das ganze gerne comitten und ins repo pushen, aber bitte in den **testing-unit** branch.

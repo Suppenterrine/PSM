@@ -186,15 +186,11 @@
         return r;
     };
 
-
     let username = "usr-" + RandHex(8);
     document.getElementById('dataLength').innerHTML = username;
     
     function sayHello(msg) {
         socket.emit('request_hello', msg);
     }
-    // id = greets
-
 </script>
-
 </html>
