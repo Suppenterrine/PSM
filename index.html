@@ -192,5 +192,9 @@
     function sayHello(msg) {
         socket.emit('request_hello', msg);
     }
+
+    socket.on('greetings', function (msg) {
+        document.getElementById('greets').innerHTML = msg;
+    });
 </script>
 </html>

@@ -17,30 +17,25 @@ http.listen(3000, function () {
     console.log('\\\\================================//');
 });
 
-io.on('connection', function(socket){
-    var user = [];
-    var sprUsr = [];
+var clients = [];
+var nameObj = {};
 
-    var nameObj = {};
-    let con = 0;
+io.on('connection', function(socket){
+
     socket.on('request_hello', function(msg) {
 
         console.log(msg + ' send a request');
-
-        user[0] = msg;
-        user[1] = socket.id;
-
-        sprUsr.push(user);
-
-        // HIER DIE VERSUCHE MIT DEN OBJEKTEN
-        // Die mag ich eigentlich lieber weil man die schöner ansprechen kann
-
-        // nameObj.name = msg;
-        // nameObj.id = socket.id;
-
-        // user.push(nameObj);
         
-        console.log(sprUsr);
-        con++;
+        nameObj.name = msg;
+        nameObj.id = socket.id;
+        clients.push(nameObj);
+        
+        console.log(clients);
+        console.log(clients[0].id);
+        
+        io.sockets.connected[clients[0].id].emit("greetings", "0 greets you.");
+        io.sockets.connected[clients[1].id].emit("greetings", "1 greets you.");
     });
+
+
 });
