@@ -1,16 +1,16 @@
 ## Also mein Problem sieht folgendermaßen aus.
 
 Wenn man sich von zwei Clients (Websiten) auf den Server hier verbindet kriegt jede Website eine
-eigene socket.id. Also jeder Client ist identifizierbar.
+eigene ```socket.id```. Also jeder Client ist identifizierbar.
 
 So auf der Website ist ja so ein schöner Button.
 
-Der schickt das event 'request_hello' an den node server.
+Der schickt das event ```'request_hello'``` an den node server.
 Als Parameter wird der generierte Usr-Name der website mitgeschickt.
 Den generier ich selber, der hat nichts mit der socket.id zu tun.
 
 So jetzt kommt das event beim server an.
-In zeile 26 (index.js) hört der auf diesen request da.
+In zeile 26 ```(index.js)``` hört der auf diesen request da.
 
 So und ich will eigentlich nur von den ganzen clients die sich verbinden
 die usrnamen und socket.ids als objekte in einem array haben verdammt nochmal!
