@@ -1,3 +1,5 @@
+### ✔ DONE and closed
+
 ## Also mein Problem sieht folgendermaßen aus.
 
 Wenn man sich von zwei Clients (Websiten) auf den Server hier verbindet kriegt jede Website eine
